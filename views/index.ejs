@@ -9,6 +9,8 @@
 
    <link rel="stylesheet" href="/assets/css/base.css" />
    <link rel="stylesheet" href="/assets/css/home.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
    <link rel="icon" type="image/x-icon" href="/assets/eq.ico">
    <meta name="robots" content="noindex, nofollow">
@@ -28,34 +30,43 @@
    </script>
 </head>
 
-<body>
+<body style="background-image: url(./assets/img/bg/bg.svg);">
 
    <div class="topbar">
       <div class="left-buttons">
-         <a id="exit" onclick="exit()" style="display: none">
-            <span style="font-weight: bold;">Exit</span>
-         </a>
-         <a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>"><span>Home</span></a>
-         <a href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>"><span>Apps</span></a>
-         <a href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>"><span>Games</span></a>
+          <a id="exit" onclick="exit()" style="display: none">
+              <span style="font-weight: bold;"><i class="fas fa-sign-out-alt"></i> Exit</span>
+          </a>
+          <a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>">
+              <span><i class="fas fa-home"></i> Home</span>
+          </a>
+          <a id="games" href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>">
+              <span><i class="fas fa-gamepad"></i> Games</span>
+          </a>
+          <a id="apps" href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>">
+              <span><i class="fas fa-th"></i> Apps</span>
+          </a>
       </div>
-
+  
       <form id="form" class="center-form">
-         <input autofocus autocomplete="off" class="search" id="search" placeholder="What's on your mind?" required />
-         <button type="submit" class="submit-button">
-            <i class="fas fa-search searchicon"></i>
-         </button>
+          <input autofocus autocomplete="off" class="search" id="search" placeholder="Search the web or enter a URL" required />
+          <button type="submit" class="submit-button">
+              <i class="fas fa-search searchicon"></i>
+          </button>
       </form>
-
+  
       <div class="right-section">
-         <a class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s"
-            style="display: flex; justify-content: flex-end; margin-left: auto;">Settings</a>
-         <a id="fullscreen" onclick="fullscreen()" style="display: none">
-            <span>Full Screen</span>
-         </a>
-         <a id="time" class="nav-btn" style="display: flex; justify-content: flex-end; margin-left: auto;">00:00PM</a>
+         <a id="util" href="/u" class="<%= path === '/u' ? 'nav-active' : 'nav-btn' %>">
+            <span><i class="fas fa-wrench"></i>Utilities</span>
+        </a>
+          <a class="<%= path === '/s' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s" style="display: flex; justify-content: flex-end; margin-left: auto;">
+              <span><i class="fas fa-cog"></i> Settings</span>
+          </a>
+          <a id="fullscreen" onclick="fullscreen()" style="display: none">
+              <span><i class="fas fa-expand"></i> Full Screen</span>
+          </a>
       </div>
-   </div>
+  </div>
 
    <div id="align" style="min-height: 100%">
       <iframe id="ifr"></iframe>
@@ -76,32 +87,32 @@
 
       <div style="text-align: center;">
          <p id="creation-info">
-            Equinox was created in 2023
+            Equinox was created in 2024
          </p>
       </div>
 
       <div class="shortcuts">
          <div class="shortcut-frame">
-            <div class="game-container" data-href="https://wrnd.xyz">
+            <div class="game-container" data-href="https://hydragames.cc/ext/monkey-mart">
                <div class="game">
-                  <img src="/assets/img/media/apps/wrnd.webp">
+                  <img src="/assets/img/media/games/monkeymart.webp">
                </div>
             </div>
             <div class="game-container"
-               data-href="https://play.geforcenow.com/games?game-id=cb2b1b5f-54ba-45fd-9839-96bbfe1376cd&lang=en_US&asset-id=01_0dd590e2-4d39-4b7f-804a-ae30330af836">
+               data-href="https://netflix.com">
                <div class="game">
-                  <img src="/assets/img/media/games/apexpromo.webp">
+                  <img src="/assets/img/media/apps/netflixsmile.webp">
                </div>
             </div>
             <div class="game-container"
                data-href="https://play.geforcenow.com/mall/#/deeplink?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a">
                <div class="game">
-                  <img src="/assets/img/media/games/fortnitepromo.webp">
+                  <img src="/assets/img/media/games/fortnite.webp">
                </div>
             </div>
-            <div class="game-container" data-href="https://netflix.com">
+            <div class="game-container" data-href="https://hydragames.cc/ext/1v1-lol">
                <div class="game">
-                  <img src="/assets/img/media/apps/netflixsmile.webp">
+                  <img src="/assets/img/media/games/1v1lol.webp">
                </div>
             </div>
          </div>
@@ -110,7 +121,7 @@
          <a title="discord" class="fitem" href="/tos">Terms</a>
          <a title="discord" class="fitem" href="https://discord.gg/H7JqRwykhk">Discord</a>
          <a title="version" href="https://github.com/wrndxyz/Equinox" style="color: rgb(83, 83, 83); font-weight: 500">
-            Equinox V1.39
+            Equinox V2
          </a>
          <a title="github" class="fitem" href="https://github.com/wrndxyz/">WRND</a>
          <a title="discord" class="fitem" href="/credits">Credits</a>
@@ -118,29 +129,8 @@
    </div>
 
    <script src="/assets/js/home.js"></script>
+   
    <script src="/assets/js/proxy.js" defer></script>
-   <script>
-      (function (ayoja) {
-         var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-         s.settings = ayoja || {};
-         s.src = "\/\/glum-mortgage.com\/acWr5owtY.W\/dhlZQU2r9PkeZYTa9S6\/be2l5wlES\/W-Qa9\/NmT\/Mp0QNFTZYwxINWy\/0s1\/MHzsQp1tNojFEn4p";
-         s.async = true;
-         l.parentNode.insertBefore(s, l);
-      })({})
-   </script>
-   <script>
-      (function(vasb){
-      var d = document,
-          s = d.createElement('script'),
-          l = d.scripts[d.scripts.length - 1];
-      s.settings = vasb || {};
-      s.src = "\/\/ourdifficulty.com\/c\/Df9.6FbE2r5SlVSbWLQf9-N\/TqMO0zNiTvYCxfO_S\/0R1dMpzBQz1zNsjEIOwH";
-      s.async = true;
-      l.parentNode.insertBefore(s, l);
-      })({})
-      </script>
 </body>
 
 </html>

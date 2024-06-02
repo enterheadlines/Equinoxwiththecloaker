@@ -1,5 +1,4 @@
 const searchInput = document.getElementById("search");
-let isRequestPending = false;
 
 window.addEventListener("DOMContentLoaded", () => {
     const link = btoa(window.location.hash.slice(1));
@@ -9,29 +8,29 @@ window.addEventListener("DOMContentLoaded", () => {
         const creationInfo = document.getElementById("creation-info");
         const facts = [
             "Equinox was created in January 2024.",
-            "Equinox is updated very frequently.",
-            "Happy browsing!",
+            "Want more links? Checkout our Patreon (patreon.com/wrnd)",
+            "Join our Discord (dsc.gg/unblockstuff)",
             "Experienced downtime? Look at our Discord server for status updates.",
-            "https://discord.gg/H7JqRwykhk",
-            "Customize your experience in settings!",
+            "Customize your experience in settings",
             "We have a lot of popular games and apps to choose from.",
-            "Have you ever played Monkey Mart? It's so fun!",
-            "Equinox was made by wrnd."
+            "Follow us on TikTok (@unblockstuff)",
+            "Equinox was made by WRND",
+            "Host Equinox yourself on GitHub (github.com/wrndxyz)"
         ];
-        const randomFact = facts[Math.floor(Math.random() * facts.length)];
-        creationInfo.textContent = randomFact;
+        creationInfo.textContent = facts[Math.floor(Math.random() * facts.length)];
     }
+
     updateText();
     setInterval(updateText, 10000);
 
     console.log(`
-		███████╗░██████╗░██╗░░░██╗██╗███╗░░██╗░█████╗░██╗░░██╗
-		██╔════╝██╔═══██╗██║░░░██║██║████╗░██║██╔══██╗╚██╗██╔╝
-		█████╗░░██║██╗██║██║░░░██║██║██╔██╗██║██║░░██║░╚███╔╝░
-		██╔══╝░░╚██████╔╝██║░░░██║██║██║╚████║██║░░██║░██╔██╗░
-		███████╗░╚═██╔═╝░╚██████╔╝██║██║░╚███║╚█████╔╝██╔╝╚██╗
-		╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝\n
-							Version 1.39`);
+        ███████╗░██████╗░██╗░░░██╗██╗███╗░░██╗░█████╗░██╗░░██╗
+        ██╔════╝██╔═══██╗██║░░░██║██║████╗░██║██╔══██╗╚██╗██╔╝
+        █████╗░░██║██╗██║██║░░░██║██║██╔██╗██║██║░░██║░╚███╔╝░
+        ██╔══╝░░╚██████╔╝██║░░░██║██║██║╚████║██║░░██║░██╔██╗░
+        ███████╗░╚═██╔═╝░╚██████╔╝██║██║░╚███║╚█████╔╝██╔╝╚██╗
+        ╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝
+        Version 2.0`);
 });
 
 document.getElementById("form").addEventListener("submit", (event) => {

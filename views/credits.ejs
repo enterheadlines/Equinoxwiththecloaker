@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/assets/css/base.css" />
     <link rel="stylesheet" href="/assets/css/games.css" />
     <link rel="stylesheet" href="/assets/css/options.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC9KFJ31NH"></script>
     <script>
@@ -44,12 +46,40 @@
 </head>
 
 <body style="background-image: none">
-    <div class="topbar" style="justify-content: space-around; width: 30%; height: 5%">
-
-        <a href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>"><span>Apps</span></a>
-        <a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>"><span>Home</span></a>
-        <a href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>"><span>Games</span></a>
-
+    <div class="topbar">
+        <div class="left-buttons">
+            <a id="exit" onclick="exit()" style="display: none">
+                <span style="font-weight: bold;"><i class="fas fa-sign-out-alt"></i> Exit</span>
+            </a>
+            <a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>">
+                <span><i class="fas fa-home"></i> Home</span>
+            </a>
+            <a id="games" href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>">
+                <span><i class="fas fa-gamepad"></i> Games</span>
+            </a>
+            <a id="apps" href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>">
+                <span><i class="fas fa-th"></i> Apps</span>
+            </a>
+        </div>
+    
+        <form id="form" class="center-form">
+            <input autofocus autocomplete="off" class="search" id="search" placeholder="Equinox Credits" style="text-align: center;" disabled />
+            <button type="submit" class="submit-button">
+                <i class="fas fa-search searchicon"></i>
+            </button>
+        </form>
+    
+        <div class="right-section">
+           <a id="util" href="/u" class="<%= path === '/u' ? 'nav-active' : 'nav-btn' %>">
+              <span><i class="fas fa-wrench"></i> Utilities</span>
+          </a>
+            <a class="<%= path === '/s' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s" style="display: flex; justify-content: flex-end; margin-left: auto;">
+                <span><i class="fas fa-cog"></i> Settings</span>
+            </a>
+            <a id="fullscreen" onclick="fullscreen()" style="display: none">
+                <span><i class="fas fa-expand"></i> Full Screen</span>
+            </a>
+        </div>
     </div>
 
     <div class="games-body">
@@ -72,12 +102,12 @@
                 <br>
                 <div class="credit-item">
                     <div class="profile-picture"
-                        style="background-image: url('https://github.com/GalacticNetwork/a1rplay/blob/main/A1R.png?raw=true');">
+                        style="background-image: url('https://hydragames.cc/img/hydra.svg'); height: 20px">
                     </div>
                     <div class="credit-info">
                         <div class="title">
-                            a1rplay
-                            <p>Provided many of the game sources we have on the site.</p>
+                            Hydra Games
+                            <p>Our official 3rd party for games on Equinox</p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +119,7 @@
                     <div class="credit-info">
                         <div class="title">
                             GNHUSTGames
-                            <p>Provided many games on the site.</p>
+                            <p>Provided many of the other games that aren't on Hydra yet.</p>
                         </div>
                     </div>
                 </div>

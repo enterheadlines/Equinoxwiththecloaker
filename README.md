@@ -17,7 +17,7 @@
 - Sleek & elegant design
 
 ## Updates
-Equinox is regularly updated, typically every 2 weeks, depending on the size of the update. See the official [Changelog](https://github.com/wrndxyz/Equinox/CHANGELOG.md) for a detailed list of updates by version number.
+Equinox is usually updated every 2 weeks, depending on the size of the update. See the official [Changelog](https://github.com/wrndxyz/Equinox/CHANGELOG.md) for a detailed list of updates by version number.
 
 ## Deployment
 At the moment, you can either run Equinox locally or Deploy with Vercel. I am trying my best to add more.

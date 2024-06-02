@@ -42,41 +42,19 @@ function resolveURL(url) {
 	}
 }
 
-function showLoadingScreen() {
-    var loadingScreen = document.getElementById('loadingScreen');
-    var loadingProgress = loadingScreen.querySelector('.loading-progress');
-
-    loadingProgress.value = 0;
-
-    loadingScreen.style.display = 'flex';
-    loadingScreen.classList.add('fade-in');
-
-    var interval = setInterval(() => {
-        if (loadingProgress.value < 95) {
-            loadingProgress.value += Math.random() * 5;
-        }
-    }, 200);
-
-    frame.onload = function() {
-        clearInterval(interval);
-        loadingProgress.value = 100;
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-            frame.style.display = 'flex';
-        }, 500);
-    };
-}
 
 function proxy(url) {
     document.getElementById("align").style.display = "flex";
     document.querySelector(".topbar").style.width = "98%";
     document.getElementById("exit").style.display = "flex";
+    document.getElementById("util").style.display = "none";
+    document.getElementById("games").style.display = "none";
+    document.getElementById("apps").style.display = "none";
     document.getElementById("fullscreen").style.display = "flex";
     document.getElementById("homebtn").style.display = "none";
     document.getElementById("settings").style.display = "none";
 
     frame.style.display = "none";
-    showLoadingScreen();
 
     registerSW().then(worker => {
         if (!worker) {
@@ -120,6 +98,9 @@ function exit() {
 	frame.src = "";
 	document.getElementById("exit").style.display = "none";
 	document.getElementById("fullscreen").style.display = "none";
+    document.getElementById("util").style.display = "flex";
+    document.getElementById("games").style.display = "flex";
+    document.getElementById("apps").style.display = "flex";
 	document.getElementById("homebtn").style.display = "flex";
 	document.getElementById("settings").style.display = "flex";
 }

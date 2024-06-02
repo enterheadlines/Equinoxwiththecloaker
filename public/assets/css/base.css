@@ -10,6 +10,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     flex-direction: column;
+    background-image: url("./assets/img/bg/bg.svg");
     width: 100%;
     align-items: center;
     background-color: #000;
@@ -31,10 +32,9 @@ body {
     width: 50%;
     z-index: 200;
     border-radius: 15px;
-    background: #0a0a0aeb;
+    background: #000000eb;
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 0 50px -5px #0c0c0cd9;
     transition: width .3s ease
 }
 
@@ -55,6 +55,14 @@ body {
     transition: all .5s ease
 }
 
+
+.topbar a:hover {
+    transform: scale(1.1);
+    background-color: #1f1f1f;
+    border-radius: 5px;
+}
+
+
 .left-buttons,
 .right-section {
     display: flex
@@ -67,8 +75,7 @@ body {
 .search {
     border-radius: 5px;
     outline: none;
-    font-size: 16px;
-    padding: 5px;
+    font-size: 14px;
     width: 100%;
     background-color: transparent;
     color: #fff;
@@ -98,11 +105,11 @@ body {
 #form {
     background: none;
     padding: 0 17px;
-    height: 52px;
+    height: 48px;
     z-index: 200;
     box-shadow: 0 1px 3px #00000080;
-    background-color: #0006;
-    border: 1px solid #3333333b;
+    background-color: #0a0a0a;
+    border: 1px solid #3128283b;
     color: var(--text-color);
     border-radius: 3px;
     outline: none;

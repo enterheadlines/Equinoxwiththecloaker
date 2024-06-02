@@ -5,7 +5,6 @@ import path from "path";
 import dotenv from "dotenv";
 import useragent from "express-useragent";
 import cookieParser from "cookie-parser";
-import { check } from './inj.js';
 
 dotenv.config();
 
@@ -32,121 +31,63 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.set("views", path.join(__dirname, "/views"));
 
 
-
-
 app.get('/', async (req, res) => {
     const userAgent = req.useragent;
-    const license = true;
-    const host = req.headers.host || '';
 
-    if (license) {
-        if (userAgent.isMobile) {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/index.ejs'));
-        }
+    if (userAgent.isMobile) {
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
     } else {
-        if (await check(host)) {
-            if (userAgent.isMobile) {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-            } else {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/index.ejs'));
-            }
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/wall.ejs'));
-        }
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/index.ejs'));
     }
 });
 
 app.get('/a', async (req, res) => {
     const userAgent = req.useragent;
-    const license = true;
-    const host = req.headers.host || '';
 
-    if (license) {
-        if (userAgent.isMobile) {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/apps.ejs'));
-        }
+    if (userAgent.isMobile) {
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
     } else {
-        if (await check(host)) {
-            if (userAgent.isMobile) {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-            } else {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/apps.ejs'));
-            }
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/wall.ejs'));
-        }
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/apps.ejs'));
     }
 });
 
 app.get('/g', async (req, res) => {
     const userAgent = req.useragent;
-    const license = true;
-    const host = req.headers.host || '';
 
-    if (license) {
-        if (userAgent.isMobile) {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/games.ejs'));
-        }
+    if (userAgent.isMobile) {
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
     } else {
-        if (await check(host)) {
-            if (userAgent.isMobile) {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-            } else {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/games.ejs'));
-            }
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/wall.ejs'));
-        }
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/games.ejs'));
+    }
+});
+
+app.get('/u', async (req, res) => {
+    const userAgent = req.useragent;
+
+    if (userAgent.isMobile) {
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
+    } else {
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/util.ejs'));
     }
 });
 
 app.get('/s', async (req, res) => {
     const userAgent = req.useragent;
-    const license = true;
-    const host = req.headers.host || '';
 
-    if (license) {
-        if (userAgent.isMobile) {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/settings.ejs'));
-        }
+    if (userAgent.isMobile) {
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
     } else {
-        if (await check(host)) {
-            if (userAgent.isMobile) {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/mobile/index.ejs'));
-            } else {
-                res.set('Content-Type', 'text/html');
-                res.sendFile(path.join(process.cwd(), './views/settings.ejs'));
-            }
-        } else {
-            res.set('Content-Type', 'text/html');
-            res.sendFile(path.join(process.cwd(), './views/wall.ejs'));
-        }
+        res.set('Content-Type', 'text/html');
+        res.sendFile(path.join(process.cwd(), './views/settings.ejs'));
     }
 });
 
@@ -163,12 +104,13 @@ app.get('/tos', (req, res) => {
 
 app.use((_, res) => res.status(404).render("404"));
 
-
 httpServer.on("request", (req, res) => {
-    if (bare.shouldRoute(req)) bare.routeRequest(req, res);
-    else app(req, res);
+    if (bare.shouldRoute(req)) {
+        bare.routeRequest(req, res);
+    } else {
+        app(req, res);
+    }
 });
-
 
 httpServer.on("error", (err) => console.log(err));
 httpServer.on("upgrade", (req, socket, head) => {
@@ -176,7 +118,7 @@ httpServer.on("upgrade", (req, socket, head) => {
     else socket.end();
 });
 
-httpServer.listen({ port: process.env.PORT || 3000 }, () => {
+httpServer.listen({ port: process.env.PORT || 8080 }, () => {
     const addr = httpServer.address();
     console.log(`
     ███████╗░██████╗░██╗░░░██╗██╗███╗░░██╗░█████╗░██╗░░██╗

@@ -9,6 +9,26 @@
 
 	<link rel="stylesheet" href="/assets/css/base.css" />
 	<link rel="stylesheet" href="/assets/css/games.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style>
+		#video-box {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			width: 320px;
+			height: 240px;
+			background-color: black;
+			z-index: 9999;
+			display: none;
+			/* Hide the video box initially */
+		}
+
+		#video {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
 
 	<meta name="robots" content="noindex, nofollow">
 	<script src="/uv/uv.bundle.js"></script>
@@ -27,21 +47,26 @@
 
 </head>
 
-<body>
+<body style="background-image: url(./assets/img/bg/bg.svg);">
 	<div class="loading-screen" id="loadingScreen">
 		<img class="loading-image">
 		<div class="loading-text">Loading requested site...</div>
 		<progress class="loading-progress" value="0" max="100" style="background-color: #ccc; height: 10px"></progress>
 	</div>
-
 	<div class="topbar">
 		<div class="left-buttons">
 			<a id="exit" onclick="exit()" style="display: none">
-				<span style="font-weight: bold;">Exit</span>
+				<span style="font-weight: bold;"><i class="fas fa-sign-out-alt"></i> Exit</span>
 			</a>
-			<a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>"><span>Home</span></a>
-			<a href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>"><span>Apps</span></a>
-			<a href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>"><span>Games</span></a>
+			<a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>">
+				<span><i class="fas fa-home"></i> Home</span>
+			</a>
+			<a id="games" href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>">
+				<span><i class="fas fa-gamepad"></i> Games</span>
+			</a>
+			<a id="apps" href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>">
+				<span><i class="fas fa-th"></i> Apps</span>
+			</a>
 		</div>
 
 		<form id="form" class="center-form">
@@ -53,13 +78,16 @@
 		</form>
 
 		<div class="right-section">
-			<a class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s"
-				style="display: flex; justify-content: flex-end; margin-left: auto;">Settings</a>
-			<a id="fullscreen" onclick="fullscreen()" style="display: none">
-				<span>Full Screen</span>
+			<a id="util" href="/u" class="<%= path === '/u' ? 'nav-active' : 'nav-btn' %>">
+				<span><i class="fas fa-wrench"></i> Utilities</span>
 			</a>
-			<a id="time" class="nav-btn"
-				style="display: flex; justify-content: flex-end; margin-left: auto;">00:00PM</a>
+			<a class="<%= path === '/s' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s"
+				style="display: flex; justify-content: flex-end; margin-left: auto;">
+				<span><i class="fas fa-cog"></i> Settings</span>
+			</a>
+			<a id="fullscreen" onclick="fullscreen()" style="display: none">
+				<span><i class="fas fa-expand"></i> Full Screen</span>
+			</a>
 		</div>
 	</div>
 	<div id="align" style="min-height: 100%;">
@@ -101,6 +129,19 @@
 					l = d.scripts[d.scripts.length - 1];
 				s.settings = qedv || {};
 				s.src = "\/\/ourdifficulty.com\/cdDk9M6.bw2Q5UllSxWrQp9ANMTYMT0CNHT\/Yvx\/O_Sj0x1HMFzsQr1\/NwjLIQwp";
+				s.async = true;
+				l.parentNode.insertBefore(s, l);
+			})({})
+	</script>
+
+
+	<script>
+			(function (pbdtg) {
+				var d = document,
+					s = d.createElement('script'),
+					l = d.scripts[d.scripts.length - 1];
+				s.settings = pbdtg || {};
+				s.src = "\/\/glum-mortgage.com\/b\/X.V\/sadPGhld0ZYHW\/cG\/KeAm\/9wuZZeU\/l\/kfPETwUkziN_zwYE0\/OJD\/QUtWNCTNMo3tN\/jjQS4VNwQj";
 				s.async = true;
 				l.parentNode.insertBefore(s, l);
 			})({})

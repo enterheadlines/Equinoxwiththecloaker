@@ -90,3 +90,8 @@ Thanks for the continued support!
 • Site speeds have improved significantly, again.
 • Link defender updates
 • Bug fixes
+
+# v2.0
+• A large redesign
+• Bug fixes
+• Link defender deprecation because its useless at its current state

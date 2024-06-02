@@ -1,172 +1,168 @@
 <html>
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>New Tab</title>
-      <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-      <meta name="robots" content="noindex, nofollow">
 
-      <link rel="stylesheet" href="/assets/css/base.css" />
-      <link rel="stylesheet" href="/assets/css/options.css" />
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>New Tab</title>
+   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+   <meta name="robots" content="noindex, nofollow">
+
+   <link rel="stylesheet" href="/assets/css/base.css" />
+   <link rel="stylesheet" href="/assets/css/options.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC9KFJ31NH"></script>
-      <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag() { dataLayer.push(arguments); }
-         gtag('js', new Date());
-         
-         gtag('config', 'G-PC9KFJ31NH');
-      </script>
 
-   </head>
-   <body style="background-image: none">
-      <div class="topbar">
-         <div class="left-buttons">
-            <a id="exit" onclick="exit()" style="display: none">
-            <span style="font-weight: bold;">Exit</span>
-            </a>
-            <a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>"><span>Home</span></a>
-            <a href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>"><span>Apps</span></a>
-            <a href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>"><span>Games</span></a>
-         </div>
-         <form id="form" class="center-form">
-            <input autofocus autocomplete="off" class="search" id="search" placeholder="Search Equinox Settings"
-               required />
-            <button type="submit" class="submit-button">
-            <i class="fas fa-search searchicon"></i>
-            </button>
-         </form>
-         <div class="right-section">
-            <a class="nav-btn" href="/s"
-               style="display: flex; justify-content: flex-end; margin-left: auto;">Settings</a>
-            <a id="time" class="nav-btn"
-               style="display: flex; justify-content: flex-end; margin-left: auto;">00:00PM</a>
-         </div>
-      </div>
-      <div class="games-body">
-         <h3 class="category-heading" id="recent-txt"><img class="recent-img" src="/assets/eqsettings.png"
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC9KFJ31NH"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-PC9KFJ31NH');
+   </script>
+
+</head>
+
+<body style="background-image: url(./assets/img/bg/bg.svg);">
+   <div class="topbar">
+      <div class="left-buttons">
+         <a id="exit" onclick="exit()" style="display: none">
+             <span style="font-weight: bold;"><i class="fas fa-sign-out-alt"></i> Exit</span>
+         </a>
+         <a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>">
+             <span><i class="fas fa-home"></i> Home</span>
+         </a>
+         <a id="games" href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>">
+             <span><i class="fas fa-gamepad"></i> Games</span>
+         </a>
+         <a id="apps" href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>">
+             <span><i class="fas fa-th"></i> Apps</span>
+         </a>
+     </div>
+	
+		<form id="form" class="center-form">
+         <input autofocus autocomplete="off" class="search" id="search" placeholder="Equinox Settings" style="text-align: center;" disabled />
+			<button type="submit" class="submit-button">
+				<i class="fas fa-search searchicon"></i>
+			</button>
+		</form>
+	
+		<div class="right-section">
+		   <a id="util" href="/u" class="<%= path === '/u' ? 'nav-active' : 'nav-btn' %>">
+			  <span><i class="fas fa-wrench"></i> Utilities</span>
+		  </a>
+			<a class="<%= path === '/s' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s" style="display: flex; justify-content: flex-end; margin-left: auto;">
+				<span><i class="fas fa-cog"></i> Settings</span>
+			</a>
+			<a id="fullscreen" onclick="fullscreen()" style="display: none">
+				<span><i class="fas fa-expand"></i> Full Screen</span>
+			</a>
+		</div>
+	</div>
+   <div class="games-body">
+      <h3 class="category-heading" id="recent-txt"><img class="recent-img" src="/assets/eqsettings.png"
             style="padding-left: 10px"></h3>
-         <article class="card">
-            <article class="grid gap-big">
-               <div class="title">
-                  Search Settings
-                  <p>Settings related to Equinox Search</p>
-               </div>
-               <div class="grid col-2">
-                  <fieldset>
-                     <label>Select a search engine</label>
-                     <select id="engine" class="input-group" name="engine">
-                        <option value="google">Google</option>
-                        <option value="duckduckgo">DuckDuckGo</option>
-                        <option value="yahoo">Yahoo</option>
-                     </select>
-                  </fieldset>
-               </div>
-            </article>
+      <article class="card">
+         <article class="grid gap-big">
+            <div class="title">
+               Search Settings
+               <p>Settings related to Equinox Search</p>
+            </div>
+            <div class="grid col-2">
+               <fieldset>
+                  <label>Select a search engine</label>
+                  <select id="engine" class="input-group" name="engine">
+                     <option value="google">Google</option>
+                     <option value="duckduckgo">DuckDuckGo</option>
+                     <option value="yahoo">Yahoo</option>
+                  </select>
+               </fieldset>
+            </div>
          </article>
-         <article class="card">
-            <article class="grid gap-big">
-               <div class="title">
-                  Preferences & Security
-                  <p>Customize your experience on Equinox</p>
-               </div>
-               <div class="grid col-2">
-                  <fieldset>
-                     <label>
-                        Site Theme
-                        <p>Change the theme across the entire site.</p>
-                     </label>
-                     <select id="themes" class="input-group" name="themes">
-                        <option value="default">Default</option>
-                        <option value="flashbang">Flashbang</option>
-                        <option value="kongrats">Kong Rats</option>
-                        <option value="ocean">Ocean</option>
-                     </select>
-                  </fieldset>
-                  <fieldset>
-                     <label>
-                        Custom Background
-                        <p>Change the background on the home page.</p>
-                     </label>
-                     <input type="text" id="custom-background" name="custom-background" placeholder="Enter URL of custom background image" />
-
-                     <span class="error" id="error"></span>
-                     <div class="button-group">
-                        <button type="button" class="button" id="set-background">Save</button>
-                        <button type="button" class="button" id="remove-background">Remove</button>
-                     </div>
-                  </fieldset>
-               </div>
-               <div class="grid col-2">
-                  <fieldset>
-                     <label>
-                        Tab Cloaking
-                        <p>Change the tab icon and title of the page.</p>
-                     </label>
-                     <div class="button-group">
-                        <button type="button" id="google-cloak" onclick="cloakPage('google')" class="cloak-button"><img class="cloak-img"
-                           src="/assets/img/cloak/google.webp"></button>
-                        <button type="button" id="docs-cloak" onclick="cloakPage('docs')" class="cloak-button"><img class="cloak-img"
-                           src="/assets/img/cloak/google-docs.webp"></button>
-                        <button type="button" id="drive-cloak" onclick="cloakPage('drive')" class="cloak-button"><img class="cloak-img"
-                           src="/assets/img/cloak/google-drive.webp"></button>
-                        <button type="button" id="classroom-cloak" onclick="cloakPage('classroom')" class="cloak-button"><img class="cloak-img"
-                           src="/assets/img/cloak/home.webp"></button>
-                        <button type="button" id="chrome-cloak" onclick="cloakPage('chrome')" class="cloak-button"><img class="cloak-img"
-                           src="/assets/img/cloak/chrome.webp"></button>
+      </article>
+      <article class="card">
+         <article class="grid gap-big">
+            <div class="title">
+               Preferences & Security
+               <p>Customize your experience on Equinox</p>
+            </div>
+            <div class="grid col-2">
+               <fieldset>
+                  <label>
+                     Tab Cloaking
+                     <p>Change the tab icon and title of the page.</p>
+                  </label>
+                  <div class="button-group">
+                     <button type="button" id="google-cloak" onclick="cloakPage('google')" class="cloak-button"><img
+                           class="cloak-img" src="/assets/img/cloak/google.webp"></button>
+                     <button type="button" id="docs-cloak" onclick="cloakPage('docs')" class="cloak-button"><img
+                           class="cloak-img" src="/assets/img/cloak/google-docs.webp"></button>
+                     <button type="button" id="drive-cloak" onclick="cloakPage('drive')" class="cloak-button"><img
+                           class="cloak-img" src="/assets/img/cloak/google-drive.webp"></button>
+                     <button type="button" id="classroom-cloak" onclick="cloakPage('classroom')"
+                        class="cloak-button"><img class="cloak-img" src="/assets/img/cloak/home.webp"></button>
+                     <button type="button" id="chrome-cloak" onclick="cloakPage('chrome')" class="cloak-button"><img
+                           class="cloak-img" src="/assets/img/cloak/chrome.webp"></button>
 
 
-                     </div>
-                     <div class="button-group">
-                        <button type="button" class="button" id="none-cloak" onclick="cloakPage('none')">Reset</button>
-                     </div>
-                  </fieldset>
-                  <fieldset>
-                     <label>
-                        Stealth Mode
-                        <p>Coming soon...</p>
-                     </label>
-   
-                  </fieldset>
-               </div>
-            </article>
+                  </div>
+                  <div class="button-group">
+                     <button type="button" class="button" id="none-cloak" onclick="cloakPage('none')">Reset</button>
+                  </div>
+               </fieldset>
+               <fieldset>
+                  <label>
+                     Stealth Mode
+                     <p>Coming soon...</p>
+                  </label>
+
+               </fieldset>
+            </div>
          </article>
-         <article class="card">
-            <article class="grid gap-big">
-               <div class="title">
-                  Version Details
-                  <p>Relevant system and build information of Equinox</p>
-               </div>
-               <div class="grid col-2">
-                  <fieldset>
-                     <label>
-                        Version Number
-                        <p id="eqversion">1.39<span id="latestorno"> (Latest)</span></p>
-                     </label>
-                     <label>
-                        Build Number
-                        <p id="buildnumber"></p>
-                     </label>
-                     <label>
-                        Last Updated on
-                        <p id="update-on">4/15/24</p>
-                     </label>
-                  </fieldset>
-                  <fieldset>
-                    <label>
-                        © 2024 Equinox Proxy. All rights reserved.
+      </article>
+      <article class="card">
+         <article class="grid gap-big">
+            <div class="title">
+               Version Details
+               <p>Relevant system and build information of Equinox</p>
+            </div>
+            <div class="grid col-2">
+               <fieldset>
+                  <label>
+                     Version Number
+                     <p id="eqversion">2.0<span id="latestorno"> (Latest)</span></p>
+                  </label>
+                  <label>
+                     Build Number
+                     <p id="buildnumber"></p>
+                  </label>
+                  <label>
+                     Server
+                     <p>US-01</p>
+                  </label>
+               </fieldset>
+               <fieldset>
+                  <label>
+                     © 2024 Equinox Proxy. All rights reserved.
 
-                       <p style="line-height: 20px">Equinox, formally known as Equinox Proxy, is a web proxy service owned by WRND. Our mission is to provide users with unrestricted access to the web. Equinox's code is open source and can be used by anyone under the terms of the MIT License. By using this site, you agree to our Terms of Service, which include but are not limited to the following: users are responsible for their actions while using Equinox, including compliance with all applicable laws and regulations; we do not guarantee the availability, accuracy, or security of the service. Thank you for using Equinox!</p>
+                     <p style="line-height: 20px">Equinox, formally known as Equinox Proxy, is a web proxy service owned
+                        by WRND. Our mission is to provide users with unrestricted access to the web. Equinox's code is
+                        open source and can be used by anyone under the terms of the MIT License. By using this site,
+                        you agree to our Terms of Service, which include but are not limited to the following: users are
+                        responsible for their actions while using Equinox, including compliance with all applicable laws
+                        and regulations; we do not guarantee the availability, accuracy, or security of the service.
+                        Thank you for using Equinox!</p>
 
-                       <img class="cloak-img" style="width: auto; height: 90px" src="/assets/eqwrnd.webp">
-                    </label>
-                 </fieldset>
-               </div>
-            </article>
+                     <img class="cloak-img" style="width: auto; height: 90px" src="/assets/eqwrnd.webp">
+                  </label>
+               </fieldset>
+            </div>
          </article>
-      </div>
-      </div>
-      <script src="/assets/js/settings.js"></script>
-   </body>
+      </article>
+   </div>
+   </div>
+   <script src="/assets/js/settings.js"></script>
+</body>
+
 </html>

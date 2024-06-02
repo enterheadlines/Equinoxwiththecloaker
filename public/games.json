@@ -23,12 +23,12 @@
       {
         "name": "Monkey Mart",
         "image": "/assets/img/media/games/monkeymart.webp",
-        "url": "https://gnhustgames.github.io/monkeymart/"
+        "url": "https://hydragames.cc/ext/monkey-mart"
       },
       {
         "name": "Slope",
         "image": "/assets/img/media/games/slope.webp",
-        "url": "https://radon.games/cdn/unity.html?id=slope"
+        "url": "https://hydragames.cc/ext/slope"
       },
       {
         "name": "Classic Minecraft",
@@ -38,7 +38,7 @@
       {
         "name": "Subway Surfers",
         "image": "/assets/img/media/games/subwaysurfers.webp",
-        "url": "https://selenite.cc/semag/subway-surfers-ny/index.html"
+        "url": "https://hydragames.cc/ext/subway-surfers"
       }
     ],
     "recent": [

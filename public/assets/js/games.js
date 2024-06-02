@@ -52,10 +52,18 @@ fetch('games.json')
                             const iframe = document.getElementById('ifr');
                             iframe.src = container.dataset.href;
                             const url = container.dataset.href;
-                            go(url);
-                            document.getElementById("search").placeholder = url;
-                        }
+                            
+                            // Check if the URL contains "Hydra" or "hydragames"
+                            if (url.toLowerCase().includes("hydra") || url.toLowerCase().includes("hydragames")) {
+                                const gameName = url.split("/").pop();
+                                const newUrl = `hydra://${gameName}`;
+                                document.getElementById("search").placeholder = newUrl;
 
+                            }
+                            
+                            go(url);
+                        }
+            
                     }, 2000);
                 }
             });
