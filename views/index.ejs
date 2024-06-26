@@ -29,7 +29,11 @@
       gtag('config', 'G-PC9KFJ31NH');
    </script>
 </head>
-
+<div class="button-container">
+   <button id="openScriptButton" class="button">
+    Cloaker
+   </button>
+</div>
 <body style="background-image: url(./assets/img/bg/bg.svg);">
 
    <div class="topbar">
@@ -128,7 +132,39 @@
          <a title="discord" class="fitem" href="/credits">Credits</a>
       </footer>
    </div>
-
+   <script>
+      var urlObj = new window.URL(window.location.href);
+      var url = window.location;
+    
+      if (url) {
+        var win;
+    
+        document.getElementById('openScriptButton').onclick = function() {
+          if (win) {
+            win.focus();
+          } else {
+            win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+            window.location.replace("https://google.com");
+    
+            var interval = setInterval(function() {
+              if (win.closed) {
+                clearInterval(interval);
+                win = undefined;
+              }
+            }, 500);
+          }
+        };
+      }
+    </script>
    <script src="/assets/js/home.js"></script>
 
    <script src="/assets/js/proxy.js" defer></script>
